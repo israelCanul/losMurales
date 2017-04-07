@@ -1,0 +1,377 @@
+// estilo para el componente Header dentro de src/components
+.header-component{
+  background-color: rgba(0,0,0,0.6);
+  height: $headerMin;
+  z-index:10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  @include desktop{
+    height: $headerMax;
+  };
+  .nav{
+    max-width: 1600px;
+    @include desktop-max{
+      margin-left: calc((100% - (1600px))/2);
+    };
+    @include clearfix;
+    &-wrap-logo{
+      width: 100%;
+      position: relative;
+      display: flex;
+      height: $headerMin;
+      @include desktop{
+        //configuraciones cuando el tamaño de la pnatalla es mayo a 1400
+        height: $headerMax;
+        width: 30%;
+        float: left;
+      };
+      //
+      @include clearfix;
+      .wrap-logo{
+        flex:2;
+
+        @include desktop{
+          display: flex;
+          justify-content:center;
+          align-items: center;
+        }
+        .logo{
+          height: #{$headerMin - 5};
+          margin: 2px 5px;
+          @include desktop{
+            width: 220px;
+          };
+        }
+      }
+      .wrap-menuMovil{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+    &-wrap-options{
+      margin: 0px;
+      position: fixed;
+      top: 0px;
+      left: -100%;
+      width: 80%;
+      background-color: rgba(0,0,0,0.9);
+      height: 100%;
+      transition: all 0.5s ease-in;
+      &.open{
+        left: 0%;
+      }
+      @include desktop{
+        position: relative;
+        left: 0%;
+        float: right;
+        width:68%;
+        height: $headerMax;
+        background-color: rgba(0,0,0,0.0);
+      };
+      ul{
+        margin: 2px 0px;
+        padding:5px;
+        @include desktop{
+          margin: 0px 0px;
+          padding:0px;
+          width: 100%;
+          height: $headerMax;
+          display: flex;
+          justify-content: flex-end;
+        };
+
+        li{
+          list-style: none;
+          padding:  0px 0px;
+          margin: 15px 10px;
+          font-family: 'oswald';
+          font-size: 1rem;
+          position: relative;
+          @include tablet{
+            padding:  20px 0px;
+            font-size: 1.3rem;
+          };
+          @include desktop{
+            margin: 0px 0px;
+            font-size: 1rem;
+            display: flex;
+            padding: 0px;
+
+          };
+          &:hover{
+            background-color: rgba(200,200,200,0.5);
+          }
+          &.active{
+            border-bottom: 2px solid white;
+            @include desktop{
+
+            };
+          }
+          a{
+            //background-color: red;
+            padding: 5px 10px;
+            color: $dorado;
+            font-family: 'oswald-regular';
+            text-decoration: none;
+            flex: 1;
+            align-items: center;
+            display: flex;
+            &:hover{
+              cursor: pointer;
+            }
+            @include desktop{
+              color: white;
+            };
+          }
+          &.book-action{
+            @include desktop{
+              margin: 20px 25px;
+              background-color: $dorado;
+              padding:0px 10px;
+            }
+            a{
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/***************************************************/
+/***************************************************/
+/***************************************************/
+/***************************************************/
+/***************************************************/
+.image-gallery{
+  max-width: 1600px;
+  @include desktop-max{
+    margin-left: calc((100% - (1600px))/2);
+  };
+}
+
+/***************************************************/
+/***************************************************/
+/***************************************************/
+/***************************************************/
+/***************************************************/
+//Footer component
+.footer{
+  max-width: 1600px;
+  box-sizing: border-box;
+  padding:10px 10px;
+  background-color: #0f0f0f;
+  @include tablet{
+    padding:30px 10px;
+  };
+  @include desktop-max{
+    margin-left: calc((100% - (1600px))/2);
+  };
+  //.footer-description
+  &-description{
+    text-align: center;
+    img{
+      width:250px;
+      @include tablet{
+        width: 100%;
+      };
+      @include desktop{
+        width:250px;
+      }
+    }
+    p{
+      color: white;
+      font-family: 'didactic';
+      text-align:center;
+    }
+  }
+  //.footer-items
+  &-items{
+    &-item{
+      text-align:center;
+      a{
+        color: white;
+        font-family: 'didactic';
+        text-decoration: none;
+        &.active{
+          border-bottom: 2px solid white;
+        }
+      }
+    }
+  }
+  //.footer-social
+  &-social{
+    h2{
+      font-family: 'didactic';
+      color: white;
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+    }
+    &-links{
+      margin-top:10px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      @include desktop{
+        margin-top: 20px;
+      }
+      img{
+        width:30px;
+        height: 30px;
+        background-color: black;
+        border-radius:30px;
+        margin-left:5px;
+        padding: 6px;
+        border-color: white;
+        border-width: 0.1px;
+        border-style: solid;
+      }
+    }
+  }
+  //.footer-social
+  &-last{
+    font-family: 'didactic';
+    color: white;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+/* Date Picker styles
+   ========================================================================== */
+.react-date-field--theme-default {
+    border: 2px solid #e1e1e1;
+    width: 300px;
+    padding: 5px;
+    .react-date-field__input{
+      color: $gris-texto;
+      font-family: 'didactic';
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-weight:400;
+    }
+}
+.react-flex-item.react-date-picker__nav-bar-date.react-flex-v2--flex-1{
+  font-family: 'didactic';
+}
+.react-date-picker__month-view-cell, .react-date-picker__basic-month-view-cell {
+  font-family: 'didactic';
+  color: $gris-texto;
+}
+.react-date-picker__month-view--theme-default .react-date-picker__month-view-day--in-hover-range .react-date-picker__month-view-day-text, .react-date-picker__month-view--theme-default .react-date-picker__month-view-day--in-range .react-date-picker__month-view-day-text, .react-date-picker__month-view--theme-default .react-date-picker__month-view-day--value .react-date-picker__month-view-day-text {
+    border: 0px solid transparent;
+    border-radius: 0%;
+}
+
+.react-date-picker__month-view--theme-default .react-date-picker__month-view-day--active .react-date-picker__month-view-day-text {
+  border: 0px solid transparent !important;
+  border-radius: 0% !important;
+  background-color: $azulPrimario !important;
+}
+
+.Select-menu .Select-option{
+  font-size: 0.8rem !important;
+  font-family: 'didactic' !important;
+  color: $azulPrimario !important;
+}
+.Select-multi-value-wrapper .Select-placeholder{
+  font-size: 0.9rem !important;
+  font-family: 'didactic' !important;
+  color: $gris-texto !important;
+}
+.Select-value .Select-value-label{
+  font-size: 0.9rem !important;
+  font-family: 'didactic' !important;
+  color: $gris-texto !important;
+}
+
+
+/* Switch
+   ========================================================================== */
+.switch,
+.switch * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  margin-bottom:10px;
+}
+
+.switch label {
+  cursor: pointer;
+  font-family: 'didactic';
+  color:$azulPrimario;
+  font-size: 0.9rem;
+  font-weight:400;
+}
+
+.switch label input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch label input[type=checkbox]:checked + .lever {
+  background-color: #84c7c1;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #26a69a;
+  left: 24px;
+}
+
+.switch label .lever {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 15px;
+  background-color: #818181;
+  border-radius: 15px;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+  vertical-align: middle;
+  margin: 0 16px;
+}
+
+.switch label .lever:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background-color: #F1F1F1;
+  border-radius: 21px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+  left: -5px;
+  top: -3px;
+  transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+}
+
+input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after,
+input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::after {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(38, 166, 154, 0.1);
+}
+
+input[type=checkbox]:not(:disabled) ~ .lever:active:after,
+input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.switch input[type=checkbox][disabled] + .lever {
+  cursor: default;
+}
+
+.switch label input[type=checkbox][disabled] + .lever:after,
+.switch label input[type=checkbox][disabled]:checked + .lever:after {
+  background-color: #BDBDBD;
+}

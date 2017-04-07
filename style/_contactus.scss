@@ -1,0 +1,48 @@
+.contactus-page{
+  max-width: 1600px;
+  @include desktop-max{
+    margin-left: calc((100% - (1600px))/2);
+  };
+  color: white;
+  .content{
+
+    h2{
+      font-family: 'HelloStockholm-regular';
+      font-size:4rem;
+      margin:0px;
+      letter-spacing: 3px;
+      font-weight: 300;
+    }
+    p{
+      font-family: 'didactic';
+      text-align: justify;
+      margin: 2px;
+      a{
+        text-decoration: none;
+        color: $dorado;
+
+      }
+    }
+    &-contact{
+      padding: 10px 5px;
+      @include tablet{
+        padding: 20px 20px;
+      };
+    }
+    &-address{
+      padding: 10px 5px;
+      @include tablet{
+        padding: 20px 20px;
+      };
+    }
+    &-map{
+      height:200px;
+      @include tablet{
+        height:300px;
+      };
+      @include desktop{
+      height:400px;
+      };
+    }
+  }
+}

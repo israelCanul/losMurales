@@ -1,0 +1,200 @@
+
+.index-page{
+  max-width: 1600px;
+  margin-top: $headerMin;
+  @include clearfix;
+  @include desktop-max{
+    margin-left: calc((100% - (1600px))/2);
+  };
+  @include desktop{
+    margin-top: $headerMax;
+  }
+}
+
+
+.gallery-component-narilearsi{
+  @include clearfix;
+  .wrap-items{
+    @include clearfix;
+    .item-gallery{
+      //background-color: red;
+      position: relative;
+      float: left;
+      box-sizing: border-box;
+      padding: 2px;
+      border: 1px solid black;
+      overflow: hidden;
+      img.image{
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in;
+        &.active{
+          cursor: zoom-in;
+          transform: scale(1.5);
+          -webkit-transform: scale(1.5);
+          -ms-transform: scale(1.5);
+        }
+      }
+    }
+  }
+  .modal-gallery{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      z-index: 10000;
+      width: 100%;
+      height: 0%;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow: hidden;
+      transition: height 0.3s ease-in;
+
+
+      @include clearfix;
+      &.active{
+        height: 100%;
+      }
+      .wrap-menu{
+        .cerrar{
+          position: relative;
+          width: 30px;
+          top: 20px;
+          right: 10px;
+          float: right;
+          z-index: 100002;
+          img{
+            width: 100%;
+          }
+        }
+      }
+      .content-img{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            width: 100%;
+            @include desktop{
+              width: auto;
+            };
+          }
+      }
+      .control{
+        position: absolute;
+         width: 50px;
+         height: 50px;
+         align-items: center;
+         justify-content: center;
+         display: flex;
+         flex-direction: row;
+         z-index: 100001;
+         background-color: $dorado;
+         bottom:0;
+         @include tablet{
+           width: 60px;
+           height: 60px;
+           top:calc(50% - 30px);
+         };
+         @include desktop{
+           width: 80px;
+           height: 80px;
+           top:calc(50% - 40px);
+         };
+         &:hover{
+           cursor: pointer;
+         }
+         &.control-left{
+           left: 0;
+         }
+         &.control-right{
+           right: 0;
+         }
+         img{
+           width: 50px;
+         }
+      }
+  }
+
+
+
+// &.modal-gallery {
+//   position: fixed;
+//   bottom: 0;
+//   z-index: 10000;
+//   width: 100%;
+//   height: 0%;
+//   background-color: rgba(0, 0, 0, 0.9);
+//   overflow: hidden;
+//   transition: height 0.3s ease-in; }
+//   &.modal-gallery:after {
+//     content: "";
+//     display: table;
+//     clear: both; }
+//   &.modal-gallery.active {
+//     height: 100%; }
+//   &.modal-gallery .wrap-menu .cerrar {
+//     position: relative;
+//     width: 30px;
+//     top: 20px;
+//     right: 10px;
+//     float: right;
+//     z-index: 100002; }
+//     @media only screen and (min-width: 767px) {
+//       &.modal-gallery .wrap-menu .cerrar {
+//         width: 50px; } }
+//     &.modal-gallery .wrap-menu .cerrar img {
+//       width: 100%; }
+//   &.modal-gallery .content-img {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0px;
+//     left: 0px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center; }
+//   &.modal-gallery .control {
+//     position: absolute;
+//     width: 10%;
+//     height: 100%;
+//     align-items: center;
+//     justify-content: center;
+//     display: flex;
+//     flex-direction: row;
+//     z-index: 100001; }
+//     @media only screen and (min-width: 767px) {
+//       &.modal-gallery .control {
+//         width: 150px; } }
+//     &.modal-gallery .control.control-left {
+//       left: 0px; }
+//       &.modal-gallery .control.control-left img {
+//         width: 100%;
+//         flex: 1;
+//         padding: 10px;
+//         background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+//         /* For Safari 5.1 to 6.0 */
+//         background: -o-linear-gradient(right, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+//         /* For Opera 11.1 to 12.0 */
+//         background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+//         /* For Firefox 3.6 to 15 */
+//         background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+//         /* Standard syntax (must be last) */ }
+//     &.modal-gallery .control.control-right {
+//       right: 0px; }
+//       &.modal-gallery .control.control-right img {
+//         width: 100%;
+//         flex: 1;
+//         padding: 10px;
+//         background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+//         /* For Safari 5.1 to 6.0 */
+//         background: -o-linear-gradient(right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+//         /* For Opera 11.1 to 12.0 */
+//         background: -moz-linear-gradient(right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+//         /* For Firefox 3.6 to 15 */
+//         background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+//         /* Standard syntax (must be last) */ }
+
+}

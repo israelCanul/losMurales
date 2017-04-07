@@ -1,0 +1,105 @@
+@import "variables";// se cargan primero las variable de toda la aplicacion
+@import "mixins";// se crean ls mixin a usar en toda la aplicacion
+@import "grid";// se declara la estructura grid a usar
+@import "../node_modules/react-date-picker/style/index.scss";
+@import "../node_modules/react-select/scss/default.scss";
+@import "../node_modules/loaders.css/src/loaders.scss";
+@import "components";// se agrega los  estios de los componentes para su reutilizacion
+@import 'index';
+@import 'reservation';
+@import 'gallery';
+@import 'menuchef';
+@import 'contactus';
+@import 'testimonial';
+body{
+  margin: 0px;
+  background-color: black;
+}
+#app-wrap{
+  //max-width: 1600px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  //background-color: green;
+  @include desktop{
+      //margin-left: calc((100% - (1600px))/2);
+  }
+}
+
+
+.icon{
+  width: 50px;
+  height: 50px;
+  &.burger{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in;
+    .square{
+      width: 80%;
+      flex: 1;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    &.open{
+      position: relative;
+      padding: 0px;
+      .square{
+        width: 100%;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        transition: all 0.5s ease-in;
+        &.item1{
+          width: 80%;
+          transform: rotate(50deg);
+        }
+        &.item2{
+          display: none;
+          transform: rotate(-50deg);
+        }
+        &.item3{
+          width: 80%;
+          transform: rotate(-50deg);
+        }
+      }
+    }
+  }
+  &.triangle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 10px;
+    box-sizing: border-box;
+    .square{
+      width: 70%;
+      flex: 1;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      @include tablet{
+        width: 80%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      };
+      &.item1{
+        transform: rotate(-50deg);
+      }
+      &.item2{
+        transform: rotate(50deg);
+      }
+    }
+
+  }
+}
+.image-gallery-slide {
+  background-color: #000 !important;
+}

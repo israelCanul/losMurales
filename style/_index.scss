@@ -1,0 +1,195 @@
+.index-page{
+
+  @include clearfix;
+  .FirstSection{
+    max-width: 1600px;
+    @include desktop-max{
+      margin-left: calc((100% - (1600px))/2);
+    };
+    @include clearfix;
+    &-title{
+      margin: 0px;
+      width: 100%;
+      padding:5px;
+      color: white;
+      text-align: center;
+      font-family: 'HelloStockholm-regular';
+      font-size: 4rem;
+      font-weight: 100;
+      box-sizing: border-box;
+      @include desktop{
+        padding: 20px;
+        padding-bottom:10px;
+        font-size: 6rem;
+        letter-spacing: 2px;
+        font-weight: 100;
+      };
+    }
+    &-description{
+      color: white;
+      padding: 0% 5%;
+      margin-top: 0px;
+      font-family: 'didactic';
+      text-align: center;
+      @include desktop{
+        padding: 0% 15%;
+
+      };
+    }
+  }
+  .SecondSection{
+    max-width: 1600px;
+    @include desktop-max{
+      margin-left: calc((100% - (1600px))/2);
+    };
+    margin-bottom: 0px;
+    .side{
+      transition: all 0.3s ease-in;
+
+      &-item{
+        transition: all 0.3s ease-in;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        @include desktop{
+            padding: 10px 50px;
+        }
+        &-title{
+          text-align: center;
+          font-family: 'HelloStockholm-regular';
+          font-size: 4rem;
+          font-weight: 100;
+          margin: 0px;
+          padding: 0px;
+          color: white;
+          @include desktop{
+
+          }
+        }
+        &-description{
+          color: white;
+          font-family: 'didactic';
+          text-align: justify;
+          margin: 0px;
+          padding: 0px;
+          @include desktop{
+
+          }
+        }
+        &-button{
+          color: $dorado;
+          padding: 10px 20px;
+          background-color: white;
+          margin-top: 10px;
+          font-family: 'didactic';
+          text-transform: uppercase;
+          @include desktop{
+            margin-top: 30px;
+          };
+        }
+      }
+    }
+    @include desktop{
+      //display: flex;
+    };
+    &-left{
+      position: relative;
+      margin-bottom: 0px;
+      padding: 0px;
+      overflow: visible;
+      z-index: 3;
+      @include clearfix;
+      &-img{
+        padding: 0rem;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img.img{
+          width: 100%;
+          @include tablet{
+            width: 330px;
+          }
+          @include desktop{
+            width: 100%;
+          }
+        }
+      }
+      &-item{
+        background-image: url('/img/bg-left.jpg');
+          background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding:20px 10px;
+        margin:0px;
+        @include tablet-s{
+          background-size: 100%;
+          background-position: 50%;
+        }
+
+        @include desktop{
+          position: absolute;
+          top: 70%;
+          height: auto;
+          width: 85% !important;
+          margin: 0px;
+          left: 10%;
+        //  background-color: green;
+          background-size: cover;
+          padding: 40px 20px !important;
+        };
+        @include desktop-max{
+          height:auto;
+        }
+      }
+    }
+    &-right{
+      background-image: url('/img/bg-right.jpg');
+        background-size: 100% 100%;
+      background-repeat: no-repeat;
+      @include tablet-s{
+
+        background-size: 100%;
+        background-position: 50%;
+      }
+      @include desktop{
+        padding: 0px 0px;
+        background-size: cover;
+      };
+    }
+  }
+  .thirdSection{
+    position: relative;
+    max-width: 1600px;
+    @include desktop-max{
+      margin-left: calc((100% - (1600px))/2);
+    };
+
+    background-color: white;
+    &-item{
+
+      @include tablet{
+        position: absolute;
+        left: 0;
+        bottom: 20%;
+      }
+      &-title{
+        font-family: 'HelloStockholm-regular';
+        font-size: 4rem;
+        font-weight: 100;
+        margin: 0px;
+      }
+      &-description{
+
+        font-family: 'didactic';
+      }
+    }
+    &-img{
+      padding: 0px;
+      margin: 0px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+$azulPrimario:#00467f;
+$naranjaPrimario : #F76b46;
+$gris-texto : #808285;
+$dorado: #db742f;
+$desktopMin: 1200px;
+$desktop: 1200px;//tamano maximo para escritorio
+$tablet: 767px;//tamano minimo para tablet
+$tablet-s: 601px;//tamano minimo para tablet
+$desktopmax:1600px;
+$nomobileNav:900px;
+$nomobileNav1000:1000px;
+$leftMenuMobile:50%;//
+$leftMenuMobileMax:40%;
+
+$numerColumns:12;
+
+$headerMax : 90px;
+$headerMin : 50px;
+
+@font-face {
+    font-family: 'trajanpro-regular';
+    src: url('/fuentes/trajanpro/TrajanPro-Regular.otf') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'trajanpro-bold';
+    src: url('/fuentes/trajanpro/TrajanPro-Bold.otf') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'open-sans-light';
+    src: url('/fuentes/opensands/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'open-sans-regular';
+    src: url('/fuentes/opensands/OpenSans-Regular.ttf') format('truetype');
+
+}
+@font-face {
+    font-family: 'oswald-bold';
+    src: url('/fuentes/Oswald/Oswald-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'oswald-regular';
+    src: url('/fuentes/Oswald/Oswald-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'oswald-light';
+    src: url('/fuentes/Oswald/Oswald-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'didactic';
+    src: url('/fuentes/other/DidactGothic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'HelloStockholm-alt';
+    src: url('/fuentes/other/HelloStockholm-Alt.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'HelloStockholm-regular';
+    src: url('/fuentes/other/HelloStockholm-Regular.otf') format('embedded-opentype');
+    src: url('/fuentes/other/HelloStockholm-Regular.ttf') format('truetype');
+}
+.bg-color{
+  &-gris{
+    background-color: $gris-texto;
+  }
+  &-white{
+    background-color: white;
+  }
+}
+
+.justity{
+  text-align: justify;
+}

@@ -1,0 +1,149 @@
+.menuchef-page{
+  max-width: 1600px;
+  @include desktop-max{
+    margin-left: calc((100% - (1600px))/2);
+  };
+  color: black;
+  background-color: white;
+  .menu{
+    @include clearfix;
+    &-description{
+      padding: 10px 10px;
+      @include tablet{
+        padding: 30px 20px;
+      };
+      @include desktop{
+        padding: 30px 30px;
+      };
+      h2{
+        font-family: 'HelloStockholm-regular';
+        font-size:4rem;
+        margin:0px;
+        letter-spacing: 3px;
+        font-weight: 300;
+      }
+      p{
+        font-family: 'didactic';
+        text-align: justify;
+        margin: 2px;
+      }
+    }
+    &-cat{
+      height: auto;
+      background-color: white;
+
+      &-lista{
+        padding: 10px;
+        margin-bottom: 0px;
+        @include tablet{
+
+        };
+        @include clearfix;
+        .item{
+          padding: 10px 0px;
+          display: inline;
+          //background-color: red;//////////
+          margin-bottom: 0px;
+          text-align: center;
+          font-family: 'didactic';
+
+
+          a{
+            //background-color: $dorado;
+            border: 1px solid rgba(0,0,0,0.4);
+            padding: 5px 15px;
+            border-radius: 15px;
+            color: black;
+            &:hover{
+              cursor: pointer;
+            }
+            &.active{
+              border-bottom: 2px solid black;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+    &-items{
+      overflow: hidden;
+      width: 100%;
+      background-color: white;////////
+      color: black;
+      &-wrap{
+        position: relative;
+        transition: left 0.5s ease-in;
+        @include clearfix;
+        .menu-items-item{
+          position: relative;
+          float: left;
+          top: 0;
+          //background-color: green;/////
+          .title{
+            text-align: center;
+            font-family: 'didactic';
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 30px auto 10px auto;
+            overflow: hidden;
+            span{
+              display: inline-block;
+              position: relative;
+              max-width: 80%;
+              &.title-span::before{
+                right: 100%;
+              }
+              &.title-span:after{
+                left: 100%;
+              }
+              &::before{
+                content: "";
+                width: 1000px;
+                height: 2px;
+                position: absolute;
+                margin: 0 15px;
+                background: #000000;
+                top: 50%;
+                margin-top: -1px;
+              }
+              &::after{
+                content: "";
+                width: 1000px;
+                height: 2px;
+                position: absolute;
+                margin: 0 15px;
+                background: #000000;
+                top: 50%;
+                margin-top: -1px;
+              }
+            }
+          }
+          .list-items{
+            margin: 0px;
+            padding: 5px;
+            @include tablet{
+              padding:20px 10px;
+            };
+            @include desktop{
+              padding: 20px 15px;
+            };
+            &-item{
+              h2{
+                font-family: 'HelloStockholm-regular';
+                font-size:3rem;
+                margin:0px;
+                letter-spacing: 3px;
+                font-weight: 400;
+              }
+              p{
+                font-family: 'didactic';
+                margin: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

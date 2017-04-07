@@ -1,0 +1,23 @@
+#testimonial-wrap{
+  max-width: 1600px;
+  @include desktop-max{
+    margin-left: calc((100% - (1600px))/2);
+  };
+  #TA_selfserveprop330{
+    .widSSP{
+      width: 100% !important;
+      @include tablet{
+        width: 468px !important;
+      };
+    }
+
+  }
+  #TA_ssnarrowcollectreview228 iframe #WIDGET{
+    width: 100% !important;
+    @include tablet{
+      width: 468px !important;
+    };
+    @include clearfix;
+  }
+
+}
