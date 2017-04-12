@@ -1,74 +1,170 @@
 .menuchef-page{
+
   max-width: 1600px;
   @include desktop-max{
     margin-left: calc((100% - (1600px))/2);
   };
   color: black;
-  background-color: white;
+  background-color: black;
   .menu{
     @include clearfix;
     &-description{
       padding: 10px 10px;
+
       @include tablet{
-        padding: 30px 20px;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: row;
       };
       @include desktop{
-        padding: 30px 30px;
+        padding: 70px 30px;
+
+
       };
       h2{
+        flex: 1;
         font-family: 'HelloStockholm-regular';
         font-size:4rem;
         margin:0px;
         letter-spacing: 3px;
         font-weight: 300;
+        text-align: center;
+
       }
       p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0px 20px;
+        flex: 1.5;
         font-family: 'didactic';
         text-align: justify;
         margin: 2px;
+        @include tablet{
+          border-left: 2px dotted black;
+        }
+      }
+    }
+    &-image{
+      position: relative;
+      @include nomobileNav{
+        margin-bottom: 70px;
+      };
+      @include desktop{
+        margin-bottom: 100px;
+      };
+      .side{
+
+          position: relative;
+          padding: 0px;
+          margin: 0px;
+          @include tablet{
+            height:150px;
+          };
+          @include desktop{
+            height:250px;
+          };
+      }
+      .wrap-images{
+
+        @include tablet{
+          position: absolute;
+          width: 50%;
+          top: 0px;
+          left: 25%;
+          height: 100%;
+        };
+        img{
+          position: relative;
+          width: 50%;
+          transition: all 0.3s ease-in;
+          @include tablet{
+            position: absolute;
+            width: 50%;
+          };
+          @include desktop{
+            width: 60%;
+          };
+          &.imga{
+            @include tablet{
+            bottom: 40%;
+            right: 45%;}
+          }
+          &.imgb{
+            @include tablet{
+            left: 45%;
+            top: 50%;}
+          }
+        }
       }
     }
     &-cat{
       height: auto;
-      background-color: white;
-
+      background-color: black;
+      //background-color: red;
       &-lista{
         padding: 10px;
         margin-bottom: 0px;
         @include tablet{
-
+          //flex-direction: column;
+        };
+        @include desktop{
+          flex-direction: row;
+          display: flex;
         };
         @include clearfix;
         .item{
-          padding: 10px 0px;
-          display: inline;
-          //background-color: red;//////////
+          flex: 1;
+          //background-color: green;
+          display: flex;
+          align-items: center;
           margin-bottom: 0px;
-          text-align: center;
           font-family: 'didactic';
+          padding-right: 5px;
+          @include desktop{
 
+          };
+          .separator{
+            display: none;
+            @include tablet{
+              display: block;
+              transform: rotate(20deg);
 
+              width:2px;
+              background-color: white;
+              margin: 0px;
+              padding: 0px;
+              height: 30px;
+            };
+          }
           a{
-            //background-color: $dorado;
-            border: 1px solid rgba(0,0,0,0.4);
-            padding: 5px 15px;
-            border-radius: 15px;
-            color: black;
+            box-sizing: border-box;
+            padding: 5px;
+            flex: 2;
+            border: 2px dashed transparentize($naranjaPrimario,1);
+            color: white;
+
+            @include tablet{
+              margin-right:8px;
+              padding: 5px 10px;
+            };
             &:hover{
               cursor: pointer;
             }
             &.active{
-              border-bottom: 2px solid black;
-              color: black;
+              box-sizing: border-box;
+              border: 2px dashed $naranjaPrimario;
             }
           }
         }
       }
     }
     &-items{
+
       overflow: hidden;
       width: 100%;
-      background-color: white;////////
+      background-color: black;////////
       color: black;
       &-wrap{
         position: relative;
@@ -81,12 +177,14 @@
           //background-color: green;/////
           .title{
             text-align: center;
-            font-family: 'didactic';
-            text-transform: uppercase;
+            font-family: 'HelloStockholm-regular';
+            font-size: 3.5rem;
             letter-spacing: 3px;
             margin: 30px auto 10px auto;
             overflow: hidden;
+            color: white;
             span{
+              color: white;
               display: inline-block;
               position: relative;
               max-width: 80%;
@@ -102,7 +200,7 @@
                 height: 2px;
                 position: absolute;
                 margin: 0 15px;
-                background: #000000;
+                background: #ffffff;
                 top: 50%;
                 margin-top: -1px;
               }
@@ -112,7 +210,7 @@
                 height: 2px;
                 position: absolute;
                 margin: 0 15px;
-                background: #000000;
+                background: #ffffff;
                 top: 50%;
                 margin-top: -1px;
               }
@@ -129,15 +227,16 @@
             };
             &-item{
               h2{
-                font-family: 'HelloStockholm-regular';
-                font-size:3rem;
+                font-family: 'didactic';
+                font-size:1.5rem;
                 margin:0px;
-                letter-spacing: 3px;
-                font-weight: 400;
+                color: white;
               }
               p{
                 font-family: 'didactic';
                 margin: 0px;
+                color: white;
+                font-size:0.8rem;
               }
             }
           }

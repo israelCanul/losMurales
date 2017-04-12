@@ -43,30 +43,30 @@ class Menu extends Component{
   }
   renderCats(){
     return this.state.items.map((data,id)=>{
-        return <li className="item col s6 m3 l2"  key={id}><a onClick={this.setLeftToMenu.bind(this,id)} className={`btn-cat ${this.state.itemSelected==id?"active":""}`}>{data.cat}</a></li>
+        return <div className="item col s12 m3"  key={id}><a onClick={this.setLeftToMenu.bind(this,id)} className={`btn-cat ${this.state.itemSelected==id?"active":""}`}>{data.cat}</a> <div className="separator"></div></div>
     });
   }
   render(){
     return(
       <div className="menu-component menu">
-        <div className="menu-description">
-          <h2>Our Chefs</h2>
-          <p>
-            Our gastronomic concept has been a labor of love and the culmination of a long and successful career for Royal Resorts Executive Chef Enrique Garcia and he has created an exquisite menu with the talented chefs at The Royal Haciendas, Juan Manuel Fuentes and Daniel Che Chimal.
-            With their unstinting attention to detail and hospitality.
-          </p>          
+        <div className="menu-description bg-color-white">
           <h2>Our Menu</h2>
           <p>
-            A menu to captivate and savor: the delicate flavors of seafood are paired with a hint of lime and fresh herbs, a touch of chile and the exotic spices of the Far East. Intriguing, exciting, each dish is a voyage of discovery, a feast for the senses.
-            <br></br>
-            The finest and freshest fish, shrimp, lobster, scallops and other fruits de mer from the Caribbean, Gulf and Pacific coasts of Mexico occupy pride of place on our thoughtful menu along with cold-water favorites such as salmon, sole and Chilean sea bass. <br></br>
-            Meat lovers will enjoy our hearty prime steaks, pork and poultry, and there is a delightful selection of starters, soups and salads for a lighter meal.
-            Ask your waiter to recommend a wine to go with your menu choices. <br></br>
-            Each wine in our cellar was lovingly selected to bring out the full flavors of our dishes.
-            To Set the Mood Here are some of our chef’s recommendations to tempt your taste buds <br></br><br></br>
-
+            A menu to captivate and savor: the delicate flavors of seafood are paired with a hint of lime and fresh herbs, a touch of chile and the exotic spices of the Far East. Intriguing, exciting, each dish is a voyage of discovery, a feast for the senses.<br></br><br></br>
           </p>
 
+        </div>
+        <div className="menu-image">
+          <div className="side bg-color-white">
+
+          </div>
+          <div className="side bg-color-black">
+
+          </div>
+          <div className="wrap-images">
+            <img className="imga" src="img/chef-image1.png" />
+            <img className="imgb" src="img/chef-image2.png" />
+          </div>
         </div>
         <div className="menu-cat">
           <div className="menu-cat-lista row">

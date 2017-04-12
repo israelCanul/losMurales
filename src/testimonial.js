@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 
+import {CommentsTripAdvisor} from './config';
 
 //components
 import Header from './components/header';
 import Footer from './components/footer';
+import ShowComments from './components/tripadvisor';
 
 //gallery
 import ImageGallery from 'react-image-gallery';
@@ -14,8 +16,7 @@ class GeneralInformationMenu extends Component{
     super(props)
     this.state={
      imagenes_last:[{
-          original:'img/gallery-last.jpg',
-          thumbnail:'img/gallery-last.jpg',
+          original:'img/gallery/menu-chefs.png'
         }],
       itemsMenu:   [
           {link:"/",label:"Home"},
@@ -26,7 +27,8 @@ class GeneralInformationMenu extends Component{
           {link:"testimonials.html",label:"Testimonials",active:true},
           {link:"contact-us.html",label:"Contact Us"},
           {link:"reservations.html",label:"Book a Table",bookAction:true}
-        ]
+        ],
+        items:CommentsTripAdvisor
     }
   }
   render(){
@@ -51,8 +53,9 @@ class GeneralInformationMenu extends Component{
         </ul>
         </div>
 
-        <div id="TA_ssnarrowcollectreview228" class="col s12 m6 l5 offset-l2">
-        
+        <div className="col s12 m6 l7 ">
+
+          <ShowComments items={this.state.items} />
         </div>
 </div>
 

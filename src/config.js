@@ -189,7 +189,25 @@
         },
         {title : 'Boquinete',
         subtitle : 'Grilled boquinete or Spanish snapper served with steamed vegetables and garlic-dill butter. 320'
-        }       
+        }
      ]
    }
  ]
+
+// se agregan los items de los comentarios para la pagina
+
+export const CommentsTripAdvisor = [
+  {comment:"I've dined here many times. I love the ambiance, the staff, and, of course, the cuisine. Keep up the good work!",
+    name: "Anikasmama",
+    image: "https://media-cdn.tripadvisor.com/media/photo-l/07/56/72/0e/anikasmama.jpg",
+    link: 'https://www.tripadvisor.com/ShowUserReviews-g150812-d2159424-r466252851-Los_Murales-Playa_del_Carmen_Yucatan_Peninsula.html#REVIEWS'},
+  {comment:"The Los Murales is a Beautiful Restaurant with a Guitar player for your enjoyment and Flaming Desserts done right at your Table.",
+    name: "JudySkibsted",
+    image: "https://media-cdn.tripadvisor.com/media/photo-l/01/2e/70/55/avatar028.jpg",
+    link: 'https://www.tripadvisor.com/ShowUserReviews-g150812-d2159424-r464129887-Los_Murales-Playa_del_Carmen_Yucatan_Peninsula.html#REVIEWS'},
+    {comment:"We had a nice dinner here while staying at the Haciendas. The food and service was terrific. I'd recommend the Mayan coffee to end your dinner.",
+      name: "Nikki H",
+      image: "https://media-cdn.tripadvisor.com/media/photo-l/03/12/e7/b0/nikki-h.jpg",
+      link: 'https://www.tripadvisor.com/ShowUserReviews-g150812-d2159424-r463804896-Los_Murales-Playa_del_Carmen_Yucatan_Peninsula.html#REVIEWS'}
+
+];

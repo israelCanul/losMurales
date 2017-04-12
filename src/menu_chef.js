@@ -24,8 +24,7 @@ class MenuChef extends  Component{
           {link:"reservations.html",label:"Book a Table",bookAction:true}
         ],
       imagenes_last:[{
-           original:'img/gallery-last.jpg',
-           thumbnail:'img/gallery-last.jpg',
+           original:'img/gallery/menu-chefs.png'
          }],
     }
   }
