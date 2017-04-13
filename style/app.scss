@@ -11,6 +11,7 @@
 @import 'menuchef';
 @import 'contactus';
 @import 'testimonial';
+@import 'events';
 body{
   margin: 0px;
   background-color: black;
@@ -102,4 +103,29 @@ body{
 }
 .image-gallery-slide {
   background-color: #000 !important;
+}
+
+// se crean clases utilizadas en la pagina
+.bg-color{
+  &-gris{
+    background-color: $gris-texto;
+  }
+  &-white{
+    background-color: white;
+  }
+  &-black{
+    background-color: black;
+  }
+}
+.text{
+  &-aling{
+    &-center{
+      text-align: center !important;
+    }
+  }
+}
+.border{
+  &-out{
+    border-width: 0px !important;
+  }
 }

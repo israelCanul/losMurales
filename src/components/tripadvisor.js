@@ -2,16 +2,13 @@ import React,{Component} from 'react';
 
 const Item = ({data})=>{
   return(
-    <div className="commentscomponent-wrap-item">
+    <div className="commentscomponent-wrap-item col s12 m6">
       <div className="testimonial-comment">
-        {data.comment}
+        <div className="user-comment">{data.comment}</div>
+        <div className="user"><a target="_blank" href={data.link}>{data.name}</a></div>
       </div>
       <div className="testimonial-meta">
-        <div className="testimonial-meta-wrapArrow"><div className="arrow"></div></div>
-        <div className="testimonial-meta-wrapUser">
           <div className="image" ><img src={data.image} /></div>
-          <div className="user"><a target="_blank" href={data.link}>{data.name}</a></div>
-        </div>
       </div>
     </div>
   );
@@ -24,17 +21,16 @@ class ShowComments extends Component{
   }
   renderItems(){
     return this.props.items.map((item,id)=>{
-      return <Item  key={id} data={item} />
+      return (
+        <Item  key={id} data={item} />
+    );
     });
   }
   render(){
     return(
       <div className="commentscomponent ">
-        <h2>Reviews</h2>
-          <div className="commentscomponent-wrap">
-
+          <div className="commentscomponent-wrap row">
               {this.renderItems()}
-
           </div>
       </div>
     );

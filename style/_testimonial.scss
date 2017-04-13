@@ -11,19 +11,98 @@
       };
     }
   }
+  .description{
+    background-color: white;
+    &-title{
+      padding-top:10px;
+      @include tablet{
+        padding-top: 30px;
+      };
+      &-title{
 
+        //border-left: 2px dashed transparent;
+        border-left: 2px dashed black;
+        //font-family: 'didactic';
+        font-family: 'HelloStockholm-regular';
+        font-size: 4rem;
+        text-align: left;
+        @include tablet{
+
+          border-left: 2px dashed black;
+          padding-left: 30px;
+          font-size: 6rem;
+        };
+        @include desktop{
+          padding-left: 60px;
+        };
+        &.comments{
+          border-left: 2px dashed transparent;
+          text-align: center;
+        }
+      }
+      &-logo{
+        //display: none;
+        display: flex;
+        align-items: center;
+        justify-content:flex-end;
+        @include tablet{
+          //display: block;
+          padding: 20px;
+          padding-top: 0px;
+        };
+        img{
+          width: 50px;
+          @include tablet{
+            width: 100px;
+          };
+          @include desktop{
+            width: 140px;
+          };
+        }
+      }
+      &-parraf{
+        padding: 5px;
+        @include tablet{
+          padding: 10px 20px;
+        };
+        p{
+          text-align: center;
+          font-family: 'didactic';
+          @include tablet{
+            font-size: 1.3rem;
+          };
+        }
+      }
+      &-btn{
+        text-align: center;
+        padding: 10px;
+        padding-bottom: 20px;
+        @include tablet{
+          padding: 20px;
+          padding-bottom: 40px;
+        };
+        a{
+          text-decoration: none;
+          color: black;
+          border: 2px dashed black;
+          padding: 10px 15px;
+          font-family: 'didactic';
+          text-transform: uppercase;
+          font-weight: 900;
+          @include tablet{
+              padding: 10px 30px;
+          };
+        }
+      }
+
+    }
+
+  }
   .commentscomponent{
       color : white;
       position: relative;
-      background-color: $dorado;
+
       width: 100%;
-      h2{
-        text-align: center;
-        font-family: 'didactic';
-        margin-bottom: 0px;
-        padding-bottom: 0px;
-        text-transform: uppercase;
-      }
       &-wrap{
         padding: 10px 5px;
         box-sizing: border-box;
@@ -34,65 +113,113 @@
           padding:20px;
         };
         &-item{
-          margin-top: 10px;
+
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: flex-start;
+          @include tablet{
+            min-height: 120px;
+          };
+          @include desktop{
+            min-height: 150px;
+          };
           .testimonial-comment{
-            background-color:white;
-            color : black;
-            padding: 10px;
-            font-family: 'didactic';
-            text-align: justify;
-          }
-          .testimonial-meta{
-            margin: 0px;
-            padding: 0px;
-            //background-color: green;
-            position: relative;
-            height: 60px;
-            &-wrapArrow{
-              height: 20px;
-              width: 20px;
-              //background-color: yellow;
-              position: absolute;
-              top: 0px;
-              left: 10%;
-              .arrow{
-                width: 0;
-                  height: 0;
-                  border-left: 20px solid transparent;
-                  border-right: 20px solid transparent;
-                  border-top: 20px solid #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content:  flex-start;
+            .user-comment{
+              flex: 2;
+              padding: 10px;
+              font-family: 'didactic';
+              text-align: justify;
+              color: black;
+            }
+            .user{
+              flex:1;
+              margin-left: 10px;
+              a{
+                font-size: 1.1rem;
+                color: black;
+                font-weight: 900;
+                text-decoration: none;
+                font-family: 'didactic';
               }
             }
-            &-wrapUser{
-              width: 100%;
-              height: 40px;
-              box-sizing: border-box;
+          }
+          .testimonial-meta{
+            .image{
+              //border-radius: 100px;
+              overflow: hidden;
               position: relative;
-              top: 20px;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              //background-color: blue;
-              padding:0px 10px;
-              .image{
-                height:40px;
-                width: 40px;
-                overflow: hidden;
-                img{
-                  width: 100%;
-                }
-              }
-              .user{
-                  margin-left: 10px;
-                  a{
-                    color: black;
-                    text-decoration: none;
-                    font-family: 'didactic';
-                  }
+              padding-bottom: 10px;
+              img{
+                width: 90%;
+                border-radius: 100px;
               }
             }
           }
         }
+
+        // &-item{
+        //   margin-top: 10px;
+        //   .testimonial-comment{
+        //     background-color:white;
+        //     color : black;
+        //     padding: 10px;
+        //     font-family: 'didactic';
+        //     text-align: justify;
+        //   }
+        //   .testimonial-meta{
+        //     margin: 0px;
+        //     padding: 0px;
+        //     //background-color: green;
+        //     position: relative;
+        //     height: 60px;
+        //     &-wrapArrow{
+        //       height: 20px;
+        //       width: 20px;
+        //       //background-color: yellow;
+        //       position: absolute;
+        //       top: 0px;
+        //       left: 10%;
+        //       .arrow{
+        //         width: 0;
+        //           height: 0;
+        //           border-left: 20px solid transparent;
+        //           border-right: 20px solid transparent;
+        //           border-top: 20px solid #fff;
+        //       }
+        //     }
+        //     &-wrapUser{
+        //       width: 100%;
+        //       height: 40px;
+        //       box-sizing: border-box;
+        //       position: relative;
+        //       top: 20px;
+        //       display: flex;
+        //       flex-direction: row;
+        //       align-items: center;
+        //       //background-color: blue;
+        //       padding:0px 10px;
+        //       .image{
+        //         height:40px;
+        //         width: 40px;
+        //         overflow: hidden;
+        //         img{
+        //           width: 100%;
+        //         }
+        //       }
+        //       .user{
+        //           margin-left: 10px;
+        //           a{
+        //             color: black;
+        //             text-decoration: none;
+        //             font-family: 'didactic';
+        //           }
+        //       }
+        //     }
+        //   }
+        // }
       }
   }
 }

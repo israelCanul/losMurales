@@ -12,6 +12,7 @@ module.exports = {
     menu_chef :'./src/menu_chef.js',
     contac_us :'./src/contac_us.js',
     testimonial :'./src/testimonial.js',
+    events :'./src/events.js',
   },
   output:{
     path:'./build/',

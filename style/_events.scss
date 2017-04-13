@@ -1,0 +1,106 @@
+.events-page{
+  max-width: 1600px;
+  margin-top: $headerMin;
+  @include clearfix;
+  @include desktop-max{
+    margin-left: calc((100% - (1600px))/2);
+  };
+  @include desktop{
+    margin-top: $headerMax;
+  };
+  color: white;
+
+  .wrap-image{
+    &-img{
+      width: 100%;
+
+    }
+  }
+  .descriptions{
+    &-title{
+      h2{
+        font-family: 'HelloStockholm-regular';
+        font-size: 4rem;
+        text-align: center;
+        font-weight: 400;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+   &-images{
+      &-text{
+
+        position: relative;
+        overflow: hidden;
+        padding: 0px 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include tablet{
+          padding: 0px 15px;
+        };
+        @include desktop{
+          padding: 0px 35px;
+        };
+        .bg{
+          position: absolute;
+          top: 0%;
+          left: 0px;
+          width: 100%;
+          z-index: 1;
+        }
+        .says{
+          font-family: 'didactic';
+          z-index: 2;
+          position: relative;
+          @include tablet{
+            font-size: 1.1rem;
+          };
+          @include desktop{
+            font-size: 1.2rem;
+          };
+        }
+        .text{
+          position: relative;
+          font-family: 'didactic';
+          z-index: 2;
+          text-align: justify;
+          @include tablet{
+            font-size: 1.1rem;
+          };
+          @include desktop{
+            font-size: 1.3rem;
+          };
+        }
+      }
+      &-gallery{
+        @include desktop{
+          margin: 0px;
+          padding: 0px;
+          position: absolute;
+          left: 49%;
+        };
+        img{
+          @include desktop{
+            margin: 0px;
+            padding: 0px;
+          };
+          &.img1{
+            z-index: 3;
+            top: 9px;
+            position: relative;
+          }
+        }
+      }
+   }
+
+  }
+  .final{
+    background-color: white;
+    color: black;
+    p{
+      font-family: 'didactic';
+    }
+  }
+}

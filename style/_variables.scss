@@ -60,17 +60,7 @@ $headerMin : 50px;
     src: url('/fuentes/other/HelloStockholm-Regular.otf') format('embedded-opentype');
     src: url('/fuentes/other/HelloStockholm-Regular.ttf') format('truetype');
 }
-.bg-color{
-  &-gris{
-    background-color: $gris-texto;
-  }
-  &-white{
-    background-color: white;
-  }
-  &-black{
-    background-color: black;
-  }
-}
+
 
 .justity{
   text-align: justify;
