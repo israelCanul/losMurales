@@ -32,7 +32,7 @@ export default class BookEngine extends Component{
   constructor(props){
     super(props);
     this.state={
-      rest: 0,
+      rest: 3,
       numAdult: '',
       numChildren : '0',
       firstName : '',
@@ -57,8 +57,7 @@ export default class BookEngine extends Component{
       requesting : false ,
       result : [],
       withoutErrors : false,
-
-      url : ROOT_URL_PRUE
+      url : ROOT_URL_PROD
     }
     this.toggleStayingAtRoyal = this.toggleStayingAtRoyal.bind(this);
     this.setRest = this.setRest.bind(this);
@@ -303,107 +302,109 @@ this.setState({date : fecha.format("YYYY-MM-DD"), dateValidatorText : true, resu
 
     return(
       <div className="row" id="BookEngine">
-      <div className="col s12 BookEngine">
-        <h1 className="BookEngine-title">ONLINE RESErvaTIONS</h1>
-        <form className="BookEngine-form" onSubmit={this.formOnSubmit} >
+        <h1 className="BookEngine-title col s12">Online Reservations</h1>
+        <div className="col s12 m5 gallery" ><img src="img/gallery/concept-gallery-1.jpg" className="item-1"  /><img src="img/gallery/concept-gallery-2.jpg" className="item-2"  /><img src="img/gallery/concept-gallery-3.jpg" className="item-3"  /></div>
+        <div className="col s12 m7 l6 offset-l1 BookEngine">
+
+          <form className="BookEngine-form" onSubmit={this.formOnSubmit} >
 
 
-          <h2 className="BookEngine-form-title" style={{marginBottom:"5px"}}>
-            Book your table
-          </h2>
-          <div className="BookEngine-form-element">
-            <select name="rest" id="restaurante-reserva" onChange={this.setRest} value={this.state.rest}>
+            <h2 className="BookEngine-form-title" style={{marginBottom:"5px"}}>
+              Book your table
+            </h2>
+            <div className="BookEngine-form-element">
+              <select name="rest" id="restaurante-reserva" onChange={this.setRest} value={this.state.rest}>
 
-               <option value={Murales.id}>Los Murales</option>
+                 <option value={Murales.id}>Los Murales</option>
 
-            </select>
-          </div>
-          <div className="BookEngine-form-element">
-            <div>
-              <DateField
-                forceValidDate
-                dateFormat={"YYYY-MM-DD"}
-                showClock={false}
-                updateOnDateClick={true}
-                collapseOnDateClick={true}
-                value={this.state.date}
-                footer={false}
-                minDate={moment()}
-                maxDate={moment().add(7,'days')}
-                ref={i=>this.selectedDate=i}
-              ><DatePicker
-                    onChange={this.datefieldOut}
-                    style={{padding: 10}}
-                    ref="checkinDate"
-                    navigation={true}
-                    locale="en"
-                    forceValidDate={true}
-                    highlightWeekends={true}
-                    highlightToday={false}
-                    weekNumbers={true}
-                    weekStartDay={0}
-                    weekNumbers={false}
-                    dayDisable = {this.state.datesDisabled}
-                    />
-            </DateField>
+              </select>
             </div>
+            <div className="BookEngine-form-element">
+              <div>
+                <DateField
+                  forceValidDate
+                  dateFormat={"YYYY-MM-DD"}
+                  showClock={false}
+                  updateOnDateClick={true}
+                  collapseOnDateClick={true}
+                  value={this.state.date}
+                  footer={false}
+                  minDate={moment()}
+                  maxDate={moment().add(7,'days')}
+                  ref={i=>this.selectedDate=i}
+                ><DatePicker
+                      onChange={this.datefieldOut}
+                      style={{padding: 10}}
+                      ref="checkinDate"
+                      navigation={true}
+                      locale="en"
+                      forceValidDate={true}
+                      highlightWeekends={true}
+                      highlightToday={false}
+                      weekNumbers={true}
+                      weekStartDay={0}
+                      weekNumbers={false}
+                      dayDisable = {this.state.datesDisabled}
+                      />
+              </DateField>
+              </div>
 
-          </div>
-          <div className="BookEngine-form-element">
-            <Select onChange={this.timeOnChange} placeholder="Schedule" searchable={false} options={this.state.timeRanges} value={this.state.time} />
-            <label className={`validator ${this.state.timeValidator? "success" : "error"}`} ref={i=>this.timeLabelValidator=i}> {`${this.state.timeValidator? "" : "Time is required"}`} </label>
-          </div>
-          <div className="BookEngine-form-element">
-            <Select onChange={this.adultOnChange} placeholder="Adults Number" searchable={false} options={options} value={this.state.numAdult} />
-            <label className={`validator ${this.state.adultValidatorText? "success" : "error"}`} ref={i=>this.adultLabelValidator=i}> {`${this.state.adultValidatorText? "" : "Adults number required or must be higher that 0"}`} </label>
-          </div>
-          <div className="BookEngine-form-element">
-            <Select onChange={this.childrenOnChange} searchable={false} placeholder="Children Number"   options={optionsC} value={this.state.numChildren} />
-            <label className={`validator ${this.state.childrenValidatorText? "success" : "error"}`} ref={i=>this.childrenLabelValidator=i}> {`${this.state.childrenValidatorText? "" : "Children number required or must be higher that 0"}`} </label>
-          </div>
-          <h2 className="BookEngine-form-title">
-            Contact Details
-          </h2>
-          <div className="BookEngine-form-element">
-            <input type="text" id="firstName" name="firstName" placeholder="First Name" onChange={this.firstNameOnChange} value={this.state.firstName} className="text reservation_name required" />
-            <label className={`validator ${this.state.firstNameValidatorText? "success" : "error"}`} ref={i=>this.firsNameLabelValidator=i}> {`${this.state.firstNameValidatorText? "" : "First Name is required"}`} </label>
-          </div>
-          <div className="BookEngine-form-element">
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name" onChange={this.lastNameOnChange} className="text reservation_name required"/>
-              <label className={`validator ${this.state.lastNameValidatorText? "success" : "error"}`} ref={i=>this.lastNameValidator=i}> {`${this.state.lastNameValidatorText? "" : "Last Name is required"}`} </label>
-          </div>
-          <div className="BookEngine-form-element">
-            <input type="email" id="reservation_email" name="email" onBlur={this.onInputKeyupEmail} onKeyUp={this.onInputKeyupEmail} onChange={this.emailOnChange} value={this.state.email} className="tex email required" placeholder="Email"/>
-            <label className={`validator ${this.state.emailValidatorText? "success" : "error"}`} ref={i=>this.emailLabelValidator=i}> {`${this.state.emailValidatorText? "" : "Email Format Incorrect"}`} </label>
-          </div>
-          <div className="BookEngine-form-element">
-            <input type="text"  id="reservation_phone" name="reservation_phone" placeholder="Phone"  onChange={this.phoneOnChange} value={this.state.phone} className="" />
-            <label className={`validator ${this.state.phoneValidatorText? "success" : "error"}`} ref={i=>this.phoneLabelValidator=i}> {`${this.state.phoneValidatorText? "" : "Phone is required"}`} </label>
-          </div>
-          <div className="BookEngine-form-element">
-            <div className="switch">
-              <label>
-                  Will you be staying at Royal Resorts?
-                  <input onChange={this.toggleStayingAtRoyal} type="checkbox" id="members-member" name="ynRRGuest"/>
-                  <span className="lever"></span>
-              </label>
             </div>
-          </div>
-          <div className="BookEngine-form-refine">
-            {refineWindow}
-          </div>
-          <div className="BookEngine-form-element">
-            <textarea id="reservation_message" onChange={this.messageOnChange}  value={this.state.message} name="note"  placeholder="Message" rows="6" aria-required="true"/>
-            <label className={`validator ${this.state.messageValidatorText? "success" : "error"}`}  ref={i=>this.phoneLabelValidator=i}> {`${this.state.messageValidatorText? "" : "Message is required"}`} </label>
-          </div>
-          <div className="BookEngine-form-element">
-            {btn}
-          </div>
-          <div className="BookEngine-form-element">
-            <p className={`result ${this.state.withoutErrors?" success":" error"}`}>{this.state.result}</p>
-          </div>
-        </form>
-      </div>
+            <div className="BookEngine-form-element">
+              <Select onChange={this.timeOnChange} placeholder="Schedule" searchable={false} options={this.state.timeRanges} value={this.state.time} />
+              <label className={`validator ${this.state.timeValidator? "success" : "error"}`} ref={i=>this.timeLabelValidator=i}> {`${this.state.timeValidator? "" : "Time is required"}`} </label>
+            </div>
+            <div className="BookEngine-form-element">
+              <Select onChange={this.adultOnChange} placeholder="Adults Number" searchable={false} options={options} value={this.state.numAdult} />
+              <label className={`validator ${this.state.adultValidatorText? "success" : "error"}`} ref={i=>this.adultLabelValidator=i}> {`${this.state.adultValidatorText? "" : "Adults number required or must be higher that 0"}`} </label>
+            </div>
+            <div className="BookEngine-form-element">
+              <Select onChange={this.childrenOnChange} searchable={false} placeholder="Children Number"   options={optionsC} value={this.state.numChildren} />
+              <label className={`validator ${this.state.childrenValidatorText? "success" : "error"}`} ref={i=>this.childrenLabelValidator=i}> {`${this.state.childrenValidatorText? "" : "Children number required or must be higher that 0"}`} </label>
+            </div>
+            <h2 className="BookEngine-form-title">
+              Contact Details
+            </h2>
+            <div className="BookEngine-form-element">
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" onChange={this.firstNameOnChange} value={this.state.firstName} className="text reservation_name required" />
+              <label className={`validator ${this.state.firstNameValidatorText? "success" : "error"}`} ref={i=>this.firsNameLabelValidator=i}> {`${this.state.firstNameValidatorText? "" : "First Name is required"}`} </label>
+            </div>
+            <div className="BookEngine-form-element">
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" onChange={this.lastNameOnChange} className="text reservation_name required"/>
+                <label className={`validator ${this.state.lastNameValidatorText? "success" : "error"}`} ref={i=>this.lastNameValidator=i}> {`${this.state.lastNameValidatorText? "" : "Last Name is required"}`} </label>
+            </div>
+            <div className="BookEngine-form-element">
+              <input type="email" id="reservation_email" name="email" onBlur={this.onInputKeyupEmail} onKeyUp={this.onInputKeyupEmail} onChange={this.emailOnChange} value={this.state.email} className="tex email required" placeholder="Email"/>
+              <label className={`validator ${this.state.emailValidatorText? "success" : "error"}`} ref={i=>this.emailLabelValidator=i}> {`${this.state.emailValidatorText? "" : "Email Format Incorrect"}`} </label>
+            </div>
+            <div className="BookEngine-form-element">
+              <input type="text"  id="reservation_phone" name="reservation_phone" placeholder="Phone"  onChange={this.phoneOnChange} value={this.state.phone} className="" />
+              <label className={`validator ${this.state.phoneValidatorText? "success" : "error"}`} ref={i=>this.phoneLabelValidator=i}> {`${this.state.phoneValidatorText? "" : "Phone is required"}`} </label>
+            </div>
+            <div className="BookEngine-form-element">
+              <div className="switch">
+                <label>
+                    Will you be staying at Royal Resorts?
+                    <input onChange={this.toggleStayingAtRoyal} type="checkbox" id="members-member" name="ynRRGuest"/>
+                    <span className="lever"></span>
+                </label>
+              </div>
+            </div>
+            <div className="BookEngine-form-refine">
+              {refineWindow}
+            </div>
+            <div className="BookEngine-form-element">
+              <textarea id="reservation_message" onChange={this.messageOnChange}  value={this.state.message} name="note"  placeholder="Message" rows="6" aria-required="true"/>
+              <label className={`validator ${this.state.messageValidatorText? "success" : "error"}`}  ref={i=>this.phoneLabelValidator=i}> {`${this.state.messageValidatorText? "" : "Message is required"}`} </label>
+            </div>
+            <div className="BookEngine-form-element">
+              {btn}
+            </div>
+            <div className="BookEngine-form-element">
+              <p className={`result ${this.state.withoutErrors?" success":" error"}`}>{this.state.result}</p>
+            </div>
+          </form>
+        </div>
       <div className="Modal">
         <div className={`Modal-wrap ${this.state.requesting? "active" :""}`} >
           <div className="Modal-wrap-content">

@@ -20,30 +20,29 @@ class Events extends Component{
         width:document.documentElement.clientWidth,
         height:document.documentElement.clientHeight
       },
-      itemsMenu:   [
+      itemsMenu: [
           {link:"/",label:"Home"},
-          {link:"menu_chefs.html",label:"Menu & Chefs"},
-          {link:"#",label:"Concept"},
-          {link:"groups-&-events.html",label:"Group & Events",active:true},
-          {link:"gallery.html",label:"Gallery"},
-          {link:"testimonials.html",label:"Testimonials"},
+          {link:"mexican-food-menu.html",label:"Menu & Chefs"},
+          {link:"best-authentic-mexican-restaurant-riviera-maya.html",label:"Concept"},
+          {link:"restaurants-in-riviera-maya-groups-and-events.html",label:"Group & Events",active:true},
+          {link:"gallery-mexican-food.html",label:"Gallery"},
+          {link:"trip-advisor-reviews.html",label:"Testimonials"},
           {link:"contact-us.html",label:"Contact Us"},
-          {link:"reservations.html",label:"Book a Table",bookAction:true}
+          {link:"reservations-online.html",label:"Book a Table",bookAction:true}
         ]
     }
     this.onResizeComponent = this.onResizeComponent.bind(this);
     window.addEventListener("resize",this.onResizeComponent);// se agrega un listener que lea el tamaño de la ventana
+    window.addEventListener("load", this.onResizeComponent);
   }
   componentWillMount(){
 
   }
   componentDidMount(){
-    let that = this;
-    setTimeout(function(){
-    //this.onResizeComponent();
-    },100);
+
   }
   onResizeComponent(e){
+    console.log('e');
     let that = this;
     this.setState({window : {
       width:document.documentElement.clientWidth,

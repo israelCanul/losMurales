@@ -6,17 +6,49 @@
   @include desktop-max{
     margin-left: calc((100% - (1600px))/2);
   };
+  .gallery{
+    display: none;
+
+    position: relative;
+    @include tablet{
+      padding-top: 20px;
+      display: block;
+    };
+    img{
+      width: 100%;
+      &.item-1{
+        @include desktop{
+          margin-bottom: 30px;
+        };
+      }
+      &.item-2{
+        transition: all 0.5s ease-in;
+        @include desktop{
+          position: absolute;
+          width: 80%;
+          top: 30%;
+          left: 30%;
+          box-shadow: 5px 5px 10px black;
+        };
+      }
+      &.item-3{
+        @include desktop{
+          margin-top: 30px;
+        };
+      }
+    }
+  }
 .BookEngine{
   //background-color: white;
 
 
   &-title{
-    font-family: 'oswald';
-    color: black;
+    font-family: 'HelloStockholm-regular';
+    font-size: 4rem;
     text-align: center;
-    letter-spacing: 1px;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
   }
   &-form{// aqui comienza los estilos del formulario
     &-title{
@@ -48,7 +80,7 @@
         border: 1px solid #e1e1e1;
         padding: 8px 6px;
         outline: none;
-        font: 1em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 1em "didactic", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #777;
         margin: 0;
         width: 100%;
@@ -65,7 +97,7 @@
         border: 1px solid #e1e1e1;
         padding: 8px 6px;
         outline: none;
-        font: 1em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 1em "didactic", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #777;
         margin: 0;
         width: 100%;
@@ -79,7 +111,7 @@
         border: 1px solid #e1e1e1;
         padding: 8px 6px;
         outline: none;
-        font: 1em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 1em "didactic", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #777;
         margin: 0;
         width: 100%;
@@ -93,7 +125,7 @@
         border: 1px solid #e1e1e1;
         padding: 8px 6px;
         outline: none;
-        font: 1em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 1em "didactic", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #777;
         margin: 0;
         width: 100%;
@@ -107,7 +139,7 @@
             border: 1px solid #e1e1e1;
             padding: 8px 6px;
             outline: none;
-            font: 1em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font: 1em "didactic", "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #777;
             margin: 0;
             width: 100%;

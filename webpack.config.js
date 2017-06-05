@@ -13,6 +13,7 @@ module.exports = {
     contac_us :'./src/contac_us.js',
     testimonial :'./src/testimonial.js',
     events :'./src/events.js',
+    concept :'./src/concept.js',
   },
   output:{
     path:'./build/',

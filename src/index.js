@@ -26,13 +26,13 @@ class GeneralInformationMenu extends Component{
         }],
       itemsMenu:   [
           {link:"/",label:"Home",active:true},
-          {link:"menu_chefs.html",label:"Menu & Chefs"},
-          {link:"#",label:"Concept"},
-          {link:"#",label:"Group & Events"},
-          {link:"gallery.html",label:"Gallery"},
-          {link:"testimonials.html",label:"Testimonials"},
+          {link:"mexican-food-menu.html",label:"Menu & Chefs"},
+          {link:"best-authentic-mexican-restaurant-riviera-maya.html",label:"Concept"},
+          {link:"restaurants-in-riviera-maya-groups-and-events.html",label:"Group & Events"},
+          {link:"gallery-mexican-food.html",label:"Gallery"},
+          {link:"trip-advisor-reviews.html",label:"Testimonials"},
           {link:"contact-us.html",label:"Contact Us"},
-          {link:"reservations.html",label:"Book a Table",bookAction:true}
+          {link:"reservations-online.html",label:"Book a Table",bookAction:true}
         ]
     }
   }

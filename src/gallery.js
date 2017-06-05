@@ -12,20 +12,19 @@ import '../style/app.scss';
 
 
 
-
 class GalleryPage extends Component{
   constructor(props){
     super(props)
     this.state={
-      itemsMenu:   [
+      itemsMenu: [
           {link:"/",label:"Home"},
-          {link:"menu_chefs.html",label:"Menu & Chefs"},
-          {link:"#",label:"Concept"},
-          {link:"#",label:"Group & Events"},
-          {link:"gallery.html",label:"Gallery",active:true},
-          {link:"testimonials.html",label:"Testimonials"},
+          {link:"mexican-food-menu.html",label:"Menu & Chefs"},
+          {link:"best-authentic-mexican-restaurant-riviera-maya.html",label:"Concept"},
+          {link:"restaurants-in-riviera-maya-groups-and-events.html",label:"Group & Events"},
+          {link:"gallery-mexican-food.html",label:"Gallery",active:true},
+          {link:"trip-advisor-reviews.html",label:"Testimonials"},
           {link:"contact-us.html",label:"Contact Us"},
-          {link:"reservations.html",label:"Book a Table",bookAction:true}
+          {link:"reservations-online.html",label:"Book a Table",bookAction:true}
         ],
       itemsGallery: [
         'img/gallery/losmurales-1.jpg',

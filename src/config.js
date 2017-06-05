@@ -35,7 +35,7 @@
 //http://localhost/reservations/reservationsPR-rest.php
 //https://www.elconquistadorcancun.com/reservas-PR/reservationsPR-rest.php
  export const ROOT_URL_PRUE = 'http://localhost/reservations/reservations-rest.php';
- export const ROOT_URL_PROD = 'https://www.elconquistadorcancun.com/reservas-PR/reservationsPR-rest.php';
+ export const ROOT_URL_PROD = 'http://elconquistadorcancun.com/reservations-rest.php';
 
 
  export const MenuMurales = [

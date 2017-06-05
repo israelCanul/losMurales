@@ -30,6 +30,10 @@
       }
     }
     &-brothers{
+      margin-bottom: 20px;
+      @include tablet{
+        margin-bottom: 30px;
+      };
       h2{
         text-align: center;
       }
@@ -39,6 +43,53 @@
       }
       img{
         width: 100%;
+      }
+    }
+    &-final{
+      margin: 0px;
+      padding: 0px;
+      .item{
+        margin: 0px;
+        padding: 0px;
+        img{
+          width: 100%;
+        }
+        &.content{
+          background-color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          color: black;
+          padding: 20px 5px;
+          @include tablet{
+            padding: 0px 5px;
+          }
+          img{
+            width: 200px;
+            @include tablet{
+              width: 100px;
+            };
+            @include desktop{
+              width: 200px;
+            };
+          }
+          p{
+            padding: 0px 15px;
+            margin: 0px;
+          }
+          a{
+            text-decoration: none;
+            color: black;
+            margin-top: 10px;
+            border: 2px dashed black;
+            padding: 5px 10px;
+            @include desktop{
+              margin-top: 30px;
+              padding: 10px 15px;
+            };
+          }
+        }
       }
     }
     .info{
@@ -64,13 +115,14 @@
             position: absolute;
             left: -30%;
             width: 100%;
-            background-color: green;
+            //background-color: green;
             padding: 10px;
             height: 80%;
             display: flex;
             flex-direction: column;
-
             justify-content: center;
+            top: 10%;
+            box-sizing: border-box;
           };
           h2{
             font-size: 3rem;
